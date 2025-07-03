@@ -1,0 +1,19 @@
+services:
+  db:
+    image: postgres
+    container_name: 'PostgresMSScheduler'
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=Lauro150796
+    volumes:
+      - postgres-db-volume:/var/lib/postgresql/data
+    ports:
+      - 5433:5432
+    networks:
+      - postgres-db-network
+
+volumes:
+  postgres-db-volume:
+
+networks:
+  postgres-db-network:
